@@ -57,7 +57,7 @@
 
         <div>
           <label class="block font-semibold mb-1">Required Skills</label>
-          <input type="text" v-model="requiredSkillsString" class="w-full border border-gray-300 rounded px-3 py-2" />
+          <textarea type="text" v-model="requiredSkillsString" class="w-full border border-gray-300 rounded px-3 py-2" ></textarea>
         </div>
 
         <!-- Buttons -->
@@ -108,10 +108,10 @@ const messageType = ref('') // 'success' or 'error'
 
 const requiredSkillsString = computed({
     get() {
-        return job.value.required_skills.join(', ') // Convert array to string
+        return job.value.required_skills.join("\n") // Convert array to string
     },
     set(value) {
-        job.value.required_skills = value.split(',').map(skill => skill.trim()) // Convert string back to array
+        job.value.required_skills = value.split("\n").map(skill => skill.trim()) // Convert string back to array
     }
 })
 

@@ -102,7 +102,7 @@
             <td class="px-4 py-2 border">{{ job.description }}</td>
             <td class="px-4 py-2 border">{{ job.location }}</td>
             <td class="px-4 py-2 border">{{ job.salary_range }}</td>
-            <td class="px-4 py-2 border">{{ job.required_skills }}</td>
+            <td class="px-4 py-2 border">{{ job.required_skills?.join('\n') || ''}}</td>
             <td class="px-4 py-2 border">{{ job.posting_date }}</td>
             <td class="px-4 py-2 border">{{ job.expiration_date }}</td>
         </tr>

@@ -89,6 +89,7 @@ A job platform built with Nuxt.js, providing features for job postings and user 
 - **Job Listings**: Users can browse and view job postings.
 - **Create/Edit Job**: Users can create and update job listings.
 - **Authentication**: Secure login and logout functionality with token-based authentication.
+    > 🛂 **Note:** To log in, please use a **username** and **password** created from the backend Django admin panel.
 
 ## Tech Stack
 

@@ -53,7 +53,7 @@
 
       <div>
         <label class="block font-semibold mb-1">Required Skills</label>
-        <input type="text" v-model="requiredSkillsString" class="w-full border border-gray-300 rounded px-3 py-2" />
+        <textarea type="text" v-model="requiredSkillsString" class="w-full border border-gray-300 rounded px-3 py-2" ></textarea>
       </div>
 
       <div class="flex justify-between items-center pt-4">
@@ -110,15 +110,11 @@ const submitJob = async () => {
 
     const jobData = {
       ...job.value,
-      required_skills: requiredSkillsString.value.split(',').map(s => s.trim()),
+      required_skills: requiredSkillsString.value.split('\n').map(s => s.trim()),
     }
 
     const res = await fetchWithAuth('/jobs/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-      },
       body: JSON.stringify(jobData),
     })
 
